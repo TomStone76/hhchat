@@ -10,4 +10,22 @@ class App extends Component {
   }
 
   changeView(view) {
+    this.setState({
+      currentView: view
+    })
   }
+
+  render() {
+    let view = '';
+    if (this.state.currentView === "ChatMessage") {
+      view = <ChatMessage changeView={this.changeView}/>
+    }
+    return (
+      <div className="App">
+          {view}
+      </div>
+    );
+  }
+}
+
+export default App;
