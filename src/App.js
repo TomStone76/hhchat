@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChatMessage from './Components/ChatMessage';
+import Signup from './Components/Signup';
 
 class App extends Component {
   constructor(props) {
