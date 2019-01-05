@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ChatMessage from './Components/ChatMessage';
 
 class App extends Component {
   constructor(props) {
