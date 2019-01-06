@@ -24,6 +24,7 @@ class ChatApp extends Component {
         })
         
         chatManager
+            .connect()
             .then(currentUser => {
                 this.setState({ currentUser: currentUser })
                 return currentUser.subscribeToRoom({

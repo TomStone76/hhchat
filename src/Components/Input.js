@@ -7,10 +7,10 @@ class Input extends Component {
             message: ""
         }
         this.handleChange = this.handleChange.bind(this);
-        this.handleChange = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(e) {
-        this.setStatet({
+        this.setState({
             message: e.target.value
         })
     }
