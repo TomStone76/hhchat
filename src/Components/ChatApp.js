@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { ChatManager, TokenProvider } from '@pusher/chatkit-client';
+import Input from "./Input"
 
 class ChatApp extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class ChatApp extends Component {
             messages: [],
             users: []
         }
+        this.addMessage = this.addMessage.bind(this);
     }
 
     componentDidMount() {
@@ -44,11 +46,19 @@ class ChatApp extends Component {
             })
             .catch(error => console.log(error))
     }
+    addMessage(text) {
+        this.state.currentUser.sendMessage({
+            text,
+            roomId: this.state.currentRoom.id
+        })
+        .catch(error => console.error('error', error));
+    }
     render() {
         return (
             <div className="chatapp">
                 <div>
                     <h2 className="header">Let's Talk</h2>
+                    <Input className="input-field" onSubmit={this.addMessage} />
                 </div>
             </div>
         )
