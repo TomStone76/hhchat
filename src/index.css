@@ -130,7 +130,7 @@ body {
 
 .message-submit {
   width: 30%;
-  background-color: #5E0565;
+  background-color: gray;
   color: white;
   font-size: 16px;
   cursor: pointer;
